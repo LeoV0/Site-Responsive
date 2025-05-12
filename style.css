@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --desaturatedRed: hsl(0, 36%, 70%);
+  --softRed: hsl(0, 93%, 68%);
+  --darkGrayishRed: hsl(0, 6%, 24%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: rgb(241, 241, 241);
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroBanner {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroImage {
+  background-image: url(images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 110px;
+}
+
+.logo img {
+  margin-left: 30px;
+  height: 25px;
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+}
+
+.textWrap > p {
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.textWrap p:nth-child(1) {
+  color: var(--desaturatedRed);
+  font-weight: 300;
+}
+
+.textWrap p:nth-child(-n + 3) {
+  letter-spacing: 8px;
+  font-size: 32px;
+}
+
+.textWrap p:nth-child(2) {
+  font-weight: 600;
+}
+
+.textWrap p:nth-child(3) {
+  font-weight: 600;
+}
+
+.textWrap > p:nth-child(4) {
+  margin-top: 30px;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--desaturatedRed);
+}
+
+.inputText {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 300px;
+}
+
+.inputText input {
+  height: 40px;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid var(--desaturatedRed);
+  padding: 15px 80px 15px 15px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.inputText input::placeholder {
+  color: var(--desaturatedRed);
+}
+
+.inputWrapper .arrowIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 40px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.inputWrapper .arrowIcon img {
+  width: 10px;
+  height: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    width: 100%;
+    margin: 0;
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    max-width: 720px;
+  }
+  .heroBanner {
+    flex: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    max-width: 720px;
+  }
+  .heroImage {
+    background-image: url(images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .textWrap {
+    align-items: flex-start;
+    text-align: left;
+    margin: 0;
+    max-width: 600px;
+    padding: 0;
+  }
+  .textWrap > p {
+    text-align: left;
+  }
+
+  .textWrap p:nth-child(1) {
+    color: var(--desaturatedRed);
+    font-weight: 300;
+    font-size: 80px;
+  }
+
+  .textWrap p:nth-child(2) {
+    font-weight: 600;
+    font-size: 70px;
+  }
+
+  .textWrap p:nth-child(3) {
+    font-weight: 600;
+    font-size: 70px;
+  }
+
+  .textWrap p:nth-child(4) {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .inputText {
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+  .inputWrapper {
+    width: 400px;
+  }
+  .inputText input {
+    height: 48px;
+    font-size: 18px;
+  }
+  .inputWrapper .arrowIcon {
+    width: 64px;
+    height: 48px;
+  }
+  .inputWrapper .arrowIcon img {
+    width: 12px;
+  }
+  .logo {
+    height: 150px;
+    align-items: flex-start;
+  }
+  .logo img {
+    margin-left: 0;
+    height: 30px;
+  }
+}
