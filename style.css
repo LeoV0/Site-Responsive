@@ -97,6 +97,7 @@ body {
 .inputText {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   margin-top: 70px;
 }
 
@@ -123,8 +124,8 @@ body {
 .inputWrapper .arrowIcon {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  /* transform: translateY(-50%); */
   width: 56px;
   height: 40px;
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -139,6 +140,42 @@ body {
   width: 10px;
   height: auto;
 }
+
+/* Ensure iconError is positioned inside the input */
+.iconError1 {
+  position: absolute;
+  right: 70px; /* Before arrowIcon (56px wide on mobile) */
+  top: -3px;
+  transform: translateY(+50%);
+  display: none; /* Hidden by default */
+  z-index: 10; /* Ensure it’s above input */
+}
+
+.iconError1 {
+  display: block; /* Show when invalid */
+}
+
+.iconError1 img {
+  width: 20px; /* Consistent size */
+  height: auto;
+}
+
+/* Ensure inputWrapper supports absolute positioning */
+.inputWrapper {
+  position: relative;
+  width: 300px;
+}
+
+/* Style textError */
+.textError {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 15px;
+  color: var(--softRed); /* Match error theme */
+}
+
+/* Media query for desktop */
 
 @media screen and (min-width: 1440px) {
   body {
@@ -230,5 +267,9 @@ body {
   .logo img {
     margin-left: 0;
     height: 30px;
+  }
+
+  .iconError1 {
+    top: 0px;
   }
 }
